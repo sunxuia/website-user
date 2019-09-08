@@ -1,0 +1,38 @@
+language: java
+install: true
+jdk:
+  - openjdk11
+services:
+  - docker
+cache:
+  directories:
+    - "$HOME/.cache"
+env:
+  global:
+    - secure: TWy9Cw2ww1G3YLGqtIQnbFZqO+Ils94Ad5xpEhZ3c83cYM845RROfabyWX6DdeM3VxYYko3gd8smXjc4gEL+wDJOyF9zeBe7Q2zbSH8NYoDfrs0vnYHPMIN43sBayv2RJulfk4ZbMrtefidTqqh59Qx2YBNlMApMyiXuaO7OvvHxq2g+yO7bedmYL/14lpQv4nkiSSMivyLD2nij6m68ocnu32xdPf6Si90bRk9M/mkSmjfompYhOaDi0eyZOAQqpvW9H4Q0T87NlpoAEY6WRtE5Pt83q+XLAkU3P3A4bq1A5Y86IpaqOZxzS1FGg/DxMx4osIT/GRUDE51Phhu57B1Li63hz4UxBFIdo99SVbxlOvIucAgvcFbyBB7tT0RSDrr0SS5Wa5ck8dR4utiCswDQx+Gccm45iQ2zd9Gm1fzL0bT8vA7DUQTuz0+yuTwvEe0oqx3bad59wviBuP9m7e9nclr+s2mP9+sueLKg95gkfNIZ1gXWIXCBuGQw/M96U9KzAKlw/mP+cn7OrFA7DnAklHrWpP/i17fCbnp9wXIJGQ60gKjGYkt1DCjFr0u7EJejs2y7DJysbbE1lmtrng5zMyFX+RR11iK3Zblhy7dMdfyUK3YJ+Uh8/A0xZ/xfD+9mw7EjMqEItvAwkIGy55RBV5h9+98J9gkDLt8X6A4=
+    - secure: RPCYGtMq+z+sTBz7Ir3ZFFzSSa2RHty1ThmRxf5NI3ih+OpNduBqYXpd54YT5SUPBgJ4hMqeu4PNWAzgsI74OLBatVxbbcgEn2SM4bTCb5LgN3eDvKGGulTBihY4AmIPrJxepVruIZBw4sEkEhQ1LqN2TfXKY96+NYkFCBiRslTg3xfMNBLVH+07BpwMhjM45wElP8ktKAEXUBE7UjBMD6hJTd/dhXd0nyq57XHSz3Qwl3KU4CyhZ3Fje4LvDU54BGfU4OLLqP9lYFW1ZiDARle7vQYrRBNqxVBfJt4EuqF7Q3h1rlpThsWdmhTmxlDbz4OZUJs4w7EaKCaVY7Ef5lAxK4y129t9MRJSIY/iBAVkT0dvAPdnhoT9OHGWG6Lzv1UptIX55rNflvwKx6frUcuRS3ecCCEakf6P1bhInFcJ6VQsHmHk9L5hlhvPl97jIj8aq1WH1wYZnr85790O6Bpw/gZ9Dr4hS8mVYPGeFMIdDTiEUrvJuB2GFvbgoKSCzx41PuhcD3/kClzdF/PJqVvCmD7Wwfcrg4yxoZvusPHzfoiqedIDQUm8LM1lCxymsaKwjx29vzktENDdwIS1FAcU0QVHX4XZhcl6UwSoe9bL5ayrCJsCxYzzJBBYOM8Fq31lm5hFY6znZCE6PRDJK8ey0HXEelbaghtJwiQcf2A=
+    - secure: RPSlMCY5YQHR3y2ZHDF0bj+ujEzI6Vv2ef/Bzzu7oz5TuXV9vrnXPu3Gn+cV0MILQTql1eZtrqqX9flFNfXNayQidYFtkNH7WA6ut+YoPQ4tSgRZr4kMvB3Zzb/y+TZlcxKQ3qaSeIKY5pfnkL04yDxsHOh5mzaELNxSx6d9pHgwwXWt6KcPmnz4Kdn2zWWuKQFQDsyiG+IGeOSdEzyQ1K2ZPKIEupTBMk6/46F56hHwRkpKwNJ+k/b2pOt6suLzjbmlQ87L/tFaykkPwQMtfT0P8fOax8PMw3PfWCHL/h5w0vU3hKxtj8AoiKiiI9PKq/x5Puj8/mvuT8pLV7wIsv/IAM8+pjwBx96LwUQVOIiTipr/MF6JZmvCugOyDwU5f4wEQP6J5nfo86P+Vg9uTd16GMdNNhZfuNtelBbytz4eX9BRwCqxunxjvPnRhKVFm92+PPIlorwrmGH1e/gzXYn3BRoJLJwzujUjKyuvALUXFeMcO58Lmn3sMIwAZlkt6bVsTDd03sQT5+gzXxP7iDgV8HlA9Y4gQPDwA42eRrcWBL+lO/W8IJ5RPHVzICg7P1wHg6/jYXyXon1NK5yCaSr/3f547qB/ANcfAABROlgM7tHSc+vxFAk2sVVlii6Iqhb2d1UKihoVafLutoM41ba2q4rCpNi2soz8HnUKFaQ=
+addons:
+  hosts:
+    - mysql-server
+  sonarcloud:
+    organization: sunxuia
+    token:
+      secure: BP/jBKeRknhf3/CVeatlXZ1wIT0ro1QkuySrNrz6tCgx4mR5k6HoJXub6Ma7pSJxfXtz7aRkWSnOIFWmtAdsJB9iwbPsW9CEQsrzAuVdvPcJisp/x0gdI39BYDqPXHS3dBBytNYx9GkyhXpNn/ZasE8RDv/58UfJKfNJuBkrLFY0tPDWKwmCbVnccRRIDbBLy17/qTXRoRd7qj1LjYtv6xIKjpH8NfSPFD+3/f2FRAoYCp71hF5+YJ3GnvUhpT7zkRfBVFtRiabi71fsTkiZKrs8wVjU326qDbNi+/YYstORwnQKiQTqW28JQ4Q7xdfPz99l2HvDMwASmGulkKUpnTlIilzQ/07Q+R7gfTGVN0SiGCn8yEqt/0HQuuBKSFfyeogr0BTYEQEcevrYropoYPJ7EQsumpFjApYFGfDOT9h1OtCjujSpnBJFct2SBIf4jbVbsJeUQyiUSMKzPQalgIDgM0Qv8ebTrxBKldNjKeUF+NWo5k2qsvzWXeajxc3rouZVXKBd3algEGCo/IogmfyIDa8UiEsWCsjAIY1jljWUzSptsngSruPi3TsXNvtufvLNNPbGwcgqqNKAF9/D7ZM83Klq6a7KqWTCW9v9Ek7W1XVlLb0vy2/Jd5bygQu6mMsfbWp4yZXeNHwki5nRWINJHFdfMLEMntT420c3BpU=
+  apt:
+    packages:
+      - docker-ce
+before_script:
+  - wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+  - sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
+  - sudo apt-get update -q
+  - sudo apt-get install -q -y --allow-unauthenticated -o Dpkg::Options::=--force-confnew mysql-server
+  - sudo systemctl restart mysql
+  - sudo mysql_upgrade
+  - echo 'mysql version is ' `mysql --version`
+  - mysql -u root -e 'CREATE DATABASE tstdb;'
+  - mysql -u root -e "CREATE USER 'tstuser'@'localhost' IDENTIFIED BY '123456';"
+  - mysql -u root -e "GRANT ALL ON tstdb.* TO 'tstuser'@'localhost';"
+script:
+  - chmod +x build.sh && ./build.sh
+  - rm -f ~/.docker/config.json
