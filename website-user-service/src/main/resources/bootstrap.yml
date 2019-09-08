@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    consul:
+      host: centos7utils
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        ip-address: 192.168.137.1
+      config:
+        enabled: false

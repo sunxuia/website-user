@@ -1,0 +1,40 @@
+server.port: 8300
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql-server:3306/devdb?character=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    platform: mysql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties.hibernate.format_sql: true
+
+website:
+  app:
+    id: 4
+    password: dl17x025r2
+    permissions:
+      user.info:
+        view: service
+        details: auth
+        social: auth
+  user.management:
+    default-roles:
+      - nromal
+    default-avatar-url: http://pic.616pic.com/ys_img/00/04/45/B98tg4SeIs.jpg
+    forbidden-user-name-prefix:
+      - administrator
+      - system
+      - username
+
+logging:
+  level:
+    root: info
+    org.apache.coyote.http11.Http11InputBuffer: debug
