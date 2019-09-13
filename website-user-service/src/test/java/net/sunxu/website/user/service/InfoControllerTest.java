@@ -8,7 +8,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import net.sunxu.website.help.exception.BizValidationException;
+import net.sunxu.website.config.feignclient.exception.InvalidException;
 import net.sunxu.website.test.dbunit.annotation.DbUnitClearTable;
 import net.sunxu.website.test.helputil.assertion.AssertHelpUtils;
 import net.sunxu.website.user.dto.SocialAccountDTO;
@@ -228,7 +228,7 @@ public class InfoControllerTest extends AbstractTest {
             exceptionThrown = true;
             Throwable e = err;
             while (e != null) {
-                if (err instanceof BizValidationException) {
+                if (err instanceof InvalidException) {
                     throwBizValidationException = true;
                     break;
                 }

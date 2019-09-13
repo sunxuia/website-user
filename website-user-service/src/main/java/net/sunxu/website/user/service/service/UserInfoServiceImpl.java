@@ -7,7 +7,7 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
-import net.sunxu.website.help.exception.BizValidationException;
+import net.sunxu.website.config.feignclient.exception.InvalidException;
 import net.sunxu.website.user.dto.SocialAccountDTO;
 import net.sunxu.website.user.dto.SocialType;
 import net.sunxu.website.user.dto.UserCreationDTO;
@@ -85,9 +85,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Transactional
     @Override
     public UserDetailsDTO createUser(UserCreationDTO dto) {
-        BizValidationException.assertFalse(userInfoRepo.existsByNameIgnoreCase(dto.getUserName()), "用户名已存在");
-        BizValidationException.assertTrue(isNameAvailable(dto.getUserName()), "用户名不允许使用");
-        BizValidationException.assertFalse(userInfoRepo.existsByMailAddress(dto.getMailAddress()), "邮箱已存在");
+        InvalidException.assertFalse(userInfoRepo.existsByNameIgnoreCase(dto.getUserName()), "用户名已存在");
+        InvalidException.assertTrue(isNameAvailable(dto.getUserName()), "用户名不允许使用");
+        InvalidException.assertFalse(userInfoRepo.existsByMailAddress(dto.getMailAddress()), "邮箱已存在");
 
         UserInfo user = new UserInfo();
         user.setName(dto.getUserName());
@@ -180,7 +180,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             var user = userInfoRepo.findById(userId).get();
             socialInfo = createNewUserSocialInfo(user.getId(), dto);
         } else if (!userId.equals(socialInfo.getUserId())) {
-            throw BizValidationException.newException("%s 已经绑定到其它账户了", dto.getSocialName());
+            throw InvalidException.newException("%s 已经绑定到其它账户了", dto.getSocialName());
         }
         updateSocialStatus(socialInfo, dto);
         userSocialInfoRepo.save(socialInfo);
