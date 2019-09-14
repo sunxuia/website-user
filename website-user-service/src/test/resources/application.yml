@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://mysql-server:3306/tstdb?character=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
-    username: root
+    username: tstuser
     password: 123456
     platform: mysql
   jpa:

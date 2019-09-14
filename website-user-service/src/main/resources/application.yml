@@ -28,7 +28,7 @@ website:
   user.management:
     default-roles:
       - nromal
-    default-avatar-url: http://pic.616pic.com/ys_img/00/04/45/B98tg4SeIs.jpg
+    default-avatar-url: https://www.qqtouxiang.com/d/file/tupian/mx/20170717/jiy3uzacnq0ml.jpg
     forbidden-user-name-prefix:
       - administrator
       - system
