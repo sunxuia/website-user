@@ -1,5 +1,7 @@
 package net.sunxu.website.user.service.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import net.sunxu.website.config.security.rbac.annotation.AccessResource;
 import net.sunxu.website.user.dto.SocialAccountDTO;
 import net.sunxu.website.user.dto.SocialType;
@@ -32,6 +34,19 @@ public class InfoController {
         var user = userInfoService.getUser(id.toString());
         var res = new UserDTO();
         BeanUtils.copyProperties(user, res);
+        return res;
+    }
+
+    @AccessResource("view")
+    @GetMapping("/users")
+    public List<UserDTO> getBatchUserInfo(@RequestParam("ids") List<Long> ids) {
+        List<UserDTO> res = new ArrayList<>(ids.size());
+        for (Long id : ids) {
+            var user = userInfoService.getUser(id.toString());
+            var dto = new UserDTO();
+            BeanUtils.copyProperties(user, dto);
+            res.add(dto);
+        }
         return res;
     }
 

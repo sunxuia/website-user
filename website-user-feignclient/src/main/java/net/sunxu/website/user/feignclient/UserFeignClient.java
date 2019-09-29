@@ -1,6 +1,7 @@
 package net.sunxu.website.user.feignclient;
 
 
+import java.util.List;
 import net.sunxu.website.user.dto.SocialAccountDTO;
 import net.sunxu.website.user.dto.SocialType;
 import net.sunxu.website.user.dto.UserCreationDTO;
@@ -26,6 +27,9 @@ public interface UserFeignClient {
      */
     @RequestMapping("/info/user/{userId}")
     UserDTO getUserInfo(@PathVariable("userId") Long id);
+
+    @RequestMapping("/info/users")
+    List<UserDTO> getBatchUserInfo(@RequestParam("ids") List<Long> ids);
 
     /**
      * 请求用户的详细信息.
